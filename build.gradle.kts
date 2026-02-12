@@ -6,8 +6,8 @@ plugins {
     id("org.beryx.jlink") version "2.25.0"
 }
 
-group = "hiandris_radames"
-version = "1.0-SNAPSHOT"
+group = "hiandris.radames"
+version = "0.1-SNAPSHOT"
 
 repositories {
     mavenCentral()
@@ -26,8 +26,8 @@ tasks.withType<JavaCompile> {
 }
 
 application {
-    mainModule.set("hiandris_radames.radamesdoga")
-    mainClass.set("hiandris_radames.radamesdoga.HelloApplication")
+    mainModule.set("hiandris.radames")
+    mainClass.set("hiandris.radames.HelloApplication")
 }
 
 javafx {

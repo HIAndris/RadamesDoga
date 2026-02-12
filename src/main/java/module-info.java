@@ -1,4 +1,4 @@
-module hiandris_radames.radamesdoga {
+module hiandris.radames {
     requires javafx.controls;
     requires javafx.fxml;
 
@@ -6,6 +6,6 @@ module hiandris_radames.radamesdoga {
     requires net.synedra.validatorfx;
     requires org.kordamp.ikonli.javafx;
 
-    opens hiandris_radames.radamesdoga to javafx.fxml;
-    exports hiandris_radames.radamesdoga;
+    opens hiandris.radames to javafx.fxml;
+    exports hiandris.radames;
 }

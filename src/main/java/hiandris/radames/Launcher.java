@@ -1,4 +1,4 @@
-package hiandris_radames.radamesdoga;
+package hiandris.radames;
 
 import javafx.application.Application;
 
