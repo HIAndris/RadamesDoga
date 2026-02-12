@@ -1,13 +1,17 @@
+import org.gradle.kotlin.dsl.jpackage
+import kotlin.collections.addAll
+
 plugins {
     java
     application
     id("org.javamodularity.moduleplugin") version "1.8.15"
-    id("org.openjfx.javafxplugin") version "0.0.13"
+    id("org.openjfx.javafxplugin") version "0.1.0"
     id("org.beryx.jlink") version "2.25.0"
 }
 
 group = "hiandris.radames"
 version = "0.1.0"
+val projectName = "RadamesDoga"
 
 repositories {
     mavenCentral()
@@ -51,8 +55,30 @@ tasks.withType<Test> {
 
 jlink {
     imageZip.set(layout.buildDirectory.file("/distributions/app-${javafx.platform.classifier}.zip"))
-    options.set(listOf("--strip-debug", "--compress", "2", "--no-header-files", "--no-man-pages"))
+    options.set(listOf("--strip-debug", "--compress", "zip-6", "--no-header-files", "--no-man-pages"))
     launcher {
-        name = "app"
+        name = projectName
+    }
+
+    jpackage {
+        appVersion = "${project.version}"
+
+        if (org.gradle.internal.os.OperatingSystem.current().isWindows) {
+            // WINDOWS
+            installerOptions.addAll(listOf(
+                "--win-dir-chooser",
+                "--win-menu",
+                "--win-menu-group", "Radames",
+                "--win-shortcut",
+                "--win-per-user-install"
+            ))
+
+        } else if (org.gradle.internal.os.OperatingSystem.current().isLinux) {
+            // LINUX
+            installerOptions.addAll(listOf(
+                "--linux-shortcut",
+                "--linux-menu-group", projectName
+            ))
+        }
     }
 }
