@@ -68,7 +68,7 @@ jlink {
             installerOptions.addAll(listOf(
                 "--win-dir-chooser",
                 "--win-menu",
-                "--win-menu-group", "Radames",
+                "--win-menu-group", projectName,
                 "--win-shortcut",
                 "--win-per-user-install"
             ))
