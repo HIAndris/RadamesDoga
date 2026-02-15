@@ -3,14 +3,30 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="hiandris.radames.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.ScrollPane?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Click me!" onAction="#onHelloButtonClick"/>
-</VBox>
+<ScrollPane fitToWidth="true"
+            fitToHeight="true"
+            stylesheets="@style.css"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="hiandris.radames.HelloController">
+
+    <VBox alignment="CENTER">
+
+        <Button text="Első Gomb"
+                styleClass="kurvanagy-button"
+                VBox.vgrow="ALWAYS"/>
+
+        <Button text="Második Gomb"
+                styleClass="kurvanagy-button"
+                VBox.vgrow="ALWAYS"/>
+
+        <Button text="Harmadik Gomb"
+                onAction="#onHelloButtonClick"
+                styleClass="kurvanagy-button"
+                VBox.vgrow="ALWAYS"/>
+
+    </VBox>
+</ScrollPane>

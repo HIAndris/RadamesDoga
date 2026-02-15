@@ -1,0 +1,7 @@
+.kurvanagy-button {
+    -fx-font-size: 24px;
+    -fx-wrap-text: true;
+    -fx-max-width: infinity;
+    -fx-max-height: infinity;
+    -fx-alignment: center;
+}
