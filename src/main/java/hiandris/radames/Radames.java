@@ -20,24 +20,47 @@ public class Radames extends Application {
      */
     @Override
     public void start(Stage stage) throws IOException {
+        // SETUP:
+
+        // Load settings
         Settings settings = Settings.getInstance();
 
+        // Load language
         Locale locale = Locale.of(settings.get("language"));
         ResourceBundle resourceBundle = ResourceBundle.getBundle("hiandris.radames.language.lang", locale);
 
+        // Get screen properties
         Screen screen = Screen.getPrimary();
         Rectangle2D bounds = screen.getVisualBounds();
-        double width = bounds.getWidth() * 0.5;
-        double height = bounds.getHeight() * 0.6;
 
+        // Set window width from settings if possible
+        String widthStr = settings.get("windowWidth");
+        double width;
+        if (widthStr.isEmpty()) {
+            width = bounds.getWidth() * 0.5;
+        } else {
+            width = Math.max(bounds.getWidth() * 0.5, Double.parseDouble(widthStr));
+        }
+
+        // Set window height from settings if possible
+        String heightStr = settings.get("windowHeight");
+        double height;
+        if (heightStr.isEmpty()) {
+            height = bounds.getHeight() * 0.6;
+        } else {
+            height = Math.max(bounds.getHeight() * 0.6, Double.parseDouble(heightStr));
+        }
+
+        // Load main menu scene and set its language resource bundle
         FXMLLoader fxmlLoader = new FXMLLoader(Radames.class.getResource("scenes/hello-view.fxml"));
         fxmlLoader.setResources(resourceBundle);
 
+        // Build the scene with the calculated parameters
         Scene scene = new Scene(fxmlLoader.load(), width, height);
         stage.setTitle("RadamesDoga");
         stage.setScene(scene);
-        stage.setMinWidth(Math.min((bounds.getWidth() - width) / 2, 300));
-        stage.setMinHeight(Math.min((bounds.getHeight() - height) / 2, 200));
+        stage.setMinWidth(Math.min(bounds.getWidth() / 2, 300));
+        stage.setMinHeight(Math.min(bounds.getHeight() / 2, 200));
         stage.setX((bounds.getWidth() - width) / 2);
         stage.setY((bounds.getHeight() - height) / 2);
         stage.show();

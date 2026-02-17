@@ -7,7 +7,13 @@ import java.nio.file.Paths;
 import java.util.Properties;
 
 /**
- * Provides settings from user home
+ * Provides personal settings from user home
+ * <p>
+ *     language
+ *     windowWidth
+ *     windowHeight
+ *     darkMode
+ * </p>
  */
 public class Settings {
     private static final String APP_DIR_NAME = ".radamesdoga";
@@ -125,9 +131,20 @@ public class Settings {
     /**
      * Get the integer value for a key
      * @param key Key name
+     * @throws NumberFormatException If the setting format is wrong
      * @return Integer value
      */
-    public int getInt(String key) {
+    public int getInt(String key) throws NumberFormatException {
         return Integer.parseInt(props.getProperty(key));
+    }
+
+    /**
+     * Get the double value for a key
+     * @param key Key name
+     * @throws NumberFormatException If the setting format is wrong
+     * @return Double value
+     */
+    public double getDouble(String key) {
+        return Double.parseDouble(props.getProperty(key));
     }
 }
