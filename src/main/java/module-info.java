@@ -8,4 +8,6 @@ module hiandris.radames {
 
     opens hiandris.radames to javafx.fxml;
     exports hiandris.radames;
+    exports hiandris.radames.scenes;
+    opens hiandris.radames.scenes to javafx.fxml;
 }

@@ -1,0 +1,15 @@
+.root {
+    -fx-font-size: 24px;
+    -fx-background-color: #2b2b2b;
+}
+
+.kurvanagy-button {
+    -fx-font-size: 1em;
+    -fx-wrap-text: true;
+    -fx-max-width: infinity;
+    -fx-max-height: infinity;
+    -fx-alignment: center;
+    -fx-background-radius: 0;
+    -fx-border-width: 0;
+    -fx-padding: 0;
+}

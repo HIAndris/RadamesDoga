@@ -1,4 +1,4 @@
-package hiandris.radames;
+package hiandris.radames.scenes;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
