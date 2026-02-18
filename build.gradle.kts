@@ -31,7 +31,7 @@ tasks.withType<JavaCompile> {
 
 application {
     mainModule.set("hiandris.radames")
-    mainClass.set("hiandris.radames.HelloApplication")
+    mainClass.set("hiandris.radames.Launcher")
 }
 
 javafx {
