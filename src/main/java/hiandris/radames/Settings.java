@@ -35,7 +35,7 @@ public class Settings {
                 Files.createDirectories(configDir);
             }
         } catch (IOException e) {
-            System.err.println(e.getMessage());
+            throw new RuntimeException("Couldn't build config dir path: " + e.getMessage());
         }
 
         load();
@@ -61,8 +61,7 @@ public class Settings {
             try (InputStream input = new FileInputStream(configPath.toFile())) {
                 props.load(input);
             } catch (IOException e) {
-                System.err.println("Failed to load settings: " + e.getMessage());
-                return false;
+                throw new RuntimeException("Couldn't load settings: " + e.getMessage());
             }
         }
         return true;
@@ -86,8 +85,7 @@ public class Settings {
             props.store(output, "RadamesDoga Settings");
             return true;
         } catch (IOException e) {
-            System.err.println("Error while saving: " + e.getMessage());
-            return false;
+            throw new RuntimeException("Couldn't save settings: " + e.getMessage());
         }
     }
 
