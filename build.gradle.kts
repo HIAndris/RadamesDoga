@@ -61,7 +61,7 @@ jlink {
     }
 
     jpackage {
-        vendor = "https://github.com/HIAndris"
+        vendor = "HIAndris"
         appVersion = "${project.version}"
 
         if (org.gradle.internal.os.OperatingSystem.current().isWindows) {
