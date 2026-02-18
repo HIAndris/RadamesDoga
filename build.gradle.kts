@@ -10,7 +10,7 @@ plugins {
 }
 
 group = "hiandris.radames"
-version = "0.1.0"
+version = "0.1.1"
 val projectName = "RadamesDoga"
 
 repositories {
@@ -61,6 +61,7 @@ jlink {
     }
 
     jpackage {
+        vendor = "https://github.com/HIAndris"
         appVersion = "${project.version}"
 
         if (org.gradle.internal.os.OperatingSystem.current().isWindows) {
