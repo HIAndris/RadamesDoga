@@ -8,7 +8,7 @@ import java.util.Properties;
 
 /**
  * Provides personal settings from user home
- * <p>
+ * <p> KEYS:
  *     language
  *     windowWidth
  *     windowHeight
