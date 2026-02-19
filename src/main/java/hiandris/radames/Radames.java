@@ -73,7 +73,7 @@ public class Radames extends Application {
         stage.show();
     }
 
-    protected boolean applyTheme(Scene scene) {
+    public boolean applyTheme(Scene scene) {
         // Get required theme
         boolean darkMode = settings.getBoolean("darkMode");
 

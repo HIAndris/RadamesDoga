@@ -6,10 +6,16 @@
     -fx-dark-text-color: #121212;
     -fx-mid-text-color: #666666;
     -fx-light-text-color: #888888;
+    -fx-background-radius: 0;
+    -fx-border-width: 0;
+    -fx-padding: 0;
 }
 
 .root * {
     -fx-background-color: -main-bg;
+    -fx-background-radius: 0;
+    -fx-border-width: 0;
+    -fx-padding: 0;
 }
 
 .kurvanagy-button {
@@ -33,6 +39,6 @@
     -fx-border-color: limegreen;
 }
 
-.kurvanagy-button:pressed {
+.kurvanagy-button:pressed, .kurvanagy-button:armed {
     -fx-border-color: cornflowerblue;
 }
