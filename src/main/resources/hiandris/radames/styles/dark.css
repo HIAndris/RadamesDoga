@@ -1,6 +1,15 @@
 .root {
+    -main-bg: #2b2b2b;
+
     -fx-font-size: 24px;
-    -fx-background-color: #2b2b2b;
+    -fx-background-color: -main-bg;
+    -fx-dark-text-color: #eeeeee;
+    -fx-mid-text-color: #ababab;
+    -fx-light-text-color: #999999;
+}
+
+.root * {
+    -fx-background-color: -main-bg;
 }
 
 .kurvanagy-button {
@@ -10,6 +19,20 @@
     -fx-max-height: infinity;
     -fx-alignment: center;
     -fx-background-radius: 0;
-    -fx-border-width: 0;
+    -fx-border-width: 2px;
+    -fx-border-color: -main-bg;
     -fx-padding: 0;
+}
+
+.kurvanagy-button:hover {
+    -fx-background-color: derive(-main-bg, 20%);
+    -fx-border-color: derive(-main-bg, 20%);
+}
+
+.kurvanagy-button:focused {
+    -fx-border-color: limegreen;
+}
+
+.kurvanagy-button:pressed {
+    -fx-border-color: cornflowerblue;
 }
