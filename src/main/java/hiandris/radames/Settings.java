@@ -96,7 +96,7 @@ public class Settings {
         if (!props.containsKey("language")) props.setProperty("language", "");
         if (!props.containsKey("windowWidth")) props.setProperty("windowWidth", "");
         if (!props.containsKey("windowHeight")) props.setProperty("windowHeight", "");
-        if (!props.containsKey("darkMode")) props.setProperty("darkMode", "false");
+        if (!props.containsKey("darkMode")) props.setProperty("darkMode", "true");
     }
 
     /**
