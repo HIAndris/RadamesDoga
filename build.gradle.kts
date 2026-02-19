@@ -1,5 +1,26 @@
-import org.gradle.kotlin.dsl.jpackage
-import kotlin.collections.addAll
+import java.io.ByteArrayOutputStream
+
+// Project main details
+group = "hiandris.radames"
+val projectName = "RadamesDoga"
+version = getGitVersion()
+
+// Get the current version from git without the "v" prefix
+fun getGitVersion(): String {
+    return try {
+        val stdout = ByteArrayOutputStream()
+        providers.exec {
+            commandLine("git", "describe", "--tags", "--abbrev=0")
+            standardOutput = stdout
+            isIgnoreExitValue = true
+        }
+        val gitTag = stdout.toString().trim()
+
+        gitTag.removePrefix("v")
+    } catch (e: Exception) {
+        "0.0.1"
+    }
+}
 
 plugins {
     java
@@ -8,10 +29,6 @@ plugins {
     id("org.openjfx.javafxplugin") version "0.1.0"
     id("org.beryx.jlink") version "2.25.0"
 }
-
-group = "hiandris.radames"
-version = "0.1.1"
-val projectName = "RadamesDoga"
 
 repositories {
     mavenCentral()
